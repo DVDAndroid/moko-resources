@@ -10,14 +10,22 @@ plugins {
 }
 
 publishing {
-    repositories.maven("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
+   /* repositories.maven("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
         name = "OSSRH"
 
         credentials {
             username = System.getenv("OSSRH_USER")
             password = System.getenv("OSSRH_KEY")
         }
-    }
+    }*/
+     repositories.maven {
+            name = "GithubPackages"
+            url = uri("https://maven.pkg.github.com/dvdandroid/moko-resources")
+            credentials {
+              username = System.getenv("GITHUB_ACTOR")
+              password = System.getenv("GITHUB_TOKEN")
+            }
+          }
 
     publications.withType<MavenPublication> {
         // Provide artifacts information requited by Maven Central
