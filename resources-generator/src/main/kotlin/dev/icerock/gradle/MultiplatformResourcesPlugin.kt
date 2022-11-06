@@ -194,7 +194,7 @@ class MultiplatformResourcesPlugin : Plugin<Project> {
                 iosLocalizationRegion
             )
         } else {
-            target.logger.warn("MR file generation for iOS is not supported on your system!")
+            // target.logger.warn("MR file generation for iOS is not supported on your system!")
         }
 
         target.tasks.withType<GenerateMultiplatformResourcesTask>()
