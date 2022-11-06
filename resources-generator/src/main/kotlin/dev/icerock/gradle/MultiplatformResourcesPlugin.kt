@@ -161,6 +161,9 @@ class MultiplatformResourcesPlugin : Plugin<Project> {
         target.plugins.withId("com.android.library") {
             setupAndroid()
         }
+        target.plugins.withId("com.android.dynamic-feature") {
+            setupAndroid()
+        }
 
         setupJvmGenerator(
             commonSourceSet = commonSourceSet,
